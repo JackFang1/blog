@@ -37,7 +37,7 @@ AppAsset::register($this);
 
     $leftmenuItems = [
         ['label' => Yii::t('yii','Home'), 'url' => ['/site/index']],
-        ['label' => Yii::t('common','Article'), 'url' => ['/site/about']],
+        ['label' => Yii::t('common','Article'), 'url' => ['/article/index']],
         ['label' => Yii::t('common','Contact'), 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -45,7 +45,8 @@ AppAsset::register($this);
         $menuItems[] = ['label' => Yii::t('common','Login'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = [
-            'label' => '<img style="width:32px;height:32px;" src="'.Yii::$app->params['avatar']['small'].'" alt="' . Yii::$app->user->identity->username . '">',
+    // border: #ccc solid 1px;width: 32px;height: 32px;
+            'label' => '<img style="border: #ccc solid 1px;width: 32px;height: 32px;" src="'.Yii::$app->params['avatar']['small'].'" alt="' . Yii::$app->user->identity->username . '">',
             'url' => ['/site/logout'],
             'linkOptions' => ['class' => 'avatar'],
             'items' =>[
